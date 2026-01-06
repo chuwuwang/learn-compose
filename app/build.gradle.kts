@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.ktx.android"
-    compileSdk = 35
+    compileSdk = 36
     defaultConfig {
         applicationId = "com.ktx.android"
         minSdk = 24
@@ -18,10 +18,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     kotlinOptions {
@@ -37,16 +34,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":NovaKit"))
-    // https://mvnrepository.com/artifact/com.google.code.gson/gson
-    implementation("com.google.code.gson:gson:2.11.0")
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation( project(":NovaKit") )
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation( platform(libs.androidx.compose.bom) )
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.13.2")
+    implementation("androidx.multidex:multidex:2.0.1")
 }
