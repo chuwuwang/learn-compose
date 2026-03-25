@@ -1,4 +1,4 @@
-package com.ktx.android
+package com.ktx.compose.sdui
 
 import android.content.Context
 import android.os.Bundle
@@ -15,23 +15,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.bot.nova.component.button.NovaButtonStyle
 import com.google.gson.Gson
-import com.ktx.android.sdui.SDUIComponent
-import com.ktx.android.sdui.SDUILoader
-import com.ktx.android.ui.theme.OpenandroidcomposeTheme
+import com.ktx.compose.ui.theme.OpenandroidcomposeTheme
 
 class MainActivity : ComponentActivity() {
 
     private val loader = SDUILoader()
 
-    override fun onCreate(savedInstanceState: Bundle ? ) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
             OpenandroidcomposeTheme {
+
                 var modifier = Modifier.fillMaxSize()
                 Scaffold(modifier) { innerPadding ->
+
                     modifier = Modifier.padding(innerPadding)
                     Root(modifier, loader)
+
                     Handler().postDelayed(
                         {
                             loader.setEvent("actionButton") {
@@ -40,18 +42,22 @@ class MainActivity : ComponentActivity() {
                             loader.setText("titleText", "Hello, Android!")
                         }, 3000
                     )
+
                     Handler().postDelayed(
                         {
-                          val style = loader.getStyle("actionButton")
+                            val style = loader.getStyle("actionButton")
                             if (style != null && style is NovaButtonStyle) {
                                 loader.updateStyle("actionButton", style.copy(color = "#FF0000"))
                             }
-                            // finish()
                         }, 6000
                     )
+
                 }
+
             }
+
         }
+
     }
 
 }
@@ -60,7 +66,6 @@ class MainActivity : ComponentActivity() {
 fun Root(modifier: Modifier, loader: SDUILoader) {
     val json = loadAssetString(LocalContext.current, "row_component.json").trimIndent()
     val component = Gson().fromJson(json, SDUIComponent::class.java)
-
     loader.Render(component)
 }
 

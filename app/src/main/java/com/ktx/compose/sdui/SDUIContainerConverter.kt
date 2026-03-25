@@ -1,4 +1,4 @@
-package com.ktx.android.sdui
+package com.ktx.compose.sdui
 
 import android.content.Context
 import com.bot.nova.component.row.NovaHStack

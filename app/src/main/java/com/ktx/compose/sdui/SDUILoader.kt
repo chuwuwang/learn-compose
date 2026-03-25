@@ -1,4 +1,4 @@
-package com.ktx.android.sdui
+package com.ktx.compose.sdui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ktx.android"
+    namespace = "com.ktx.compose"
     compileSdk = 36
     defaultConfig {
         applicationId = "com.ktx.android"
@@ -16,6 +16,10 @@ android {
         multiDexEnabled = true
     }
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")

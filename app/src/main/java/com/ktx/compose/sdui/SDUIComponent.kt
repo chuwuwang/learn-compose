@@ -1,4 +1,4 @@
-package com.ktx.android.sdui
+package com.ktx.compose.sdui
 
 data class SDUIComponent(
     val id: String,
