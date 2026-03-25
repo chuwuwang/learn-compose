@@ -41,6 +41,8 @@ dependencies {
     implementation( project(":SDKit") )
     implementation( project(":NovaKit") )
 
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
+
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation("com.google.code.gson:gson:2.13.2")
     implementation("androidx.multidex:multidex:2.0.1")
