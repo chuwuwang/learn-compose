@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.bot.nova.component.button.NovaButtonStyle
 import com.google.gson.Gson
-import com.ktx.compose.ui.theme.OpenandroidcomposeTheme
+import com.ktx.compose.ui.theme.KTXTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            OpenandroidcomposeTheme {
+            KTXTheme {
 
                 var modifier = Modifier.fillMaxSize()
                 Scaffold(modifier) { innerPadding ->

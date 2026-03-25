@@ -38,9 +38,14 @@ android {
 }
 
 dependencies {
+    implementation( project(":SDKit") )
     implementation( project(":NovaKit") )
 
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation("com.google.code.gson:gson:2.13.2")
     implementation("androidx.multidex:multidex:2.0.1")
+
+    // Added to resolve java.lang.ClassNotFoundException: androidx.compose.ui.tooling.ComposeViewAdapter
+    // ui-tooling is required for the Android Studio Compose Preview to work.
+    debugImplementation(libs.androidx.ui.tooling)
 }
