@@ -49,4 +49,6 @@ dependencies {
     // Added to resolve java.lang.ClassNotFoundException: androidx.compose.ui.tooling.ComposeViewAdapter
     // ui-tooling is required for the Android Studio Compose Preview to work.
     debugImplementation(libs.androidx.ui.tooling)
+
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
 }

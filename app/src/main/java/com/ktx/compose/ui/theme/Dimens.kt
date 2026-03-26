@@ -14,6 +14,8 @@ object Dimens {
     val px_24 = 24.dp
     val px_32 = 32.dp
     val px_48 = 48.dp
+    val px_56 = 56.dp
+    val px_60 = 60.dp
     val px_64 = 64.dp
 
     val sp_10 = 10.sp

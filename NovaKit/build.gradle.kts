@@ -31,6 +31,7 @@ android {
 }
 
 dependencies {
+    api(libs.material)
     api(libs.androidx.core.ktx)
     api(libs.androidx.material3)
     api(libs.androidx.lifecycle.runtime.ktx)

@@ -32,19 +32,20 @@ import com.ktx.compose.ui.theme.Dimens
 import com.ktx.compose.ui.theme.Fonts
 import com.ktx.compose.ui.widget.RwTopAppBar
 import com.ktx.compose.view.CustomizeViewActivity
+import kotlin.random.Random
 
 class MainActivity : BaseCMPActivity() {
 
     private val dataList = arrayListOf(
-        Pair("Customize View", R.drawable.img_carousel_1),
-        Pair("Cool Animation", R.drawable.img_carousel_2),
+        Triple("Customize View", Random.nextInt(250, 300), R.drawable.img_carousel_1),
+        Triple("Cool Animation", Random.nextInt(250, 300), R.drawable.img_carousel_2),
     )
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Preview(device = "id:pixel_9_pro_xl")
     @Composable
     override fun Screen() {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column {
             val text = stringResource(id = R.string.app_name)
             RwTopAppBar(text)
 
@@ -61,16 +62,16 @@ class MainActivity : BaseCMPActivity() {
     }
 
     @Composable
-    private fun ItemView(item: Pair<String, Int>, index: Int) {
+    private fun ItemView(item: Triple<String, Int, Int>, index: Int) {
         val onClick = {
             if (index == 0) {
                 navigateTo<CustomizeViewActivity>()
             }
         }
-        val modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).height(300.dp)
+        val modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).height(item.second.dp)
         Card(modifier = modifier) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Image(modifier = Modifier.matchParentSize(), painter = painterResource(id = item.second), contentScale = ContentScale.Crop, contentDescription = "")
+                Image(modifier = Modifier.matchParentSize(), painter = painterResource(id = item.third), contentScale = ContentScale.Crop, contentDescription = "")
 
                 val color = Color.Black.copy(alpha = 0.3f)
                 val modifier = Modifier.fillMaxSize().background(color)
