@@ -25,21 +25,20 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
     buildFeatures {
         compose = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 dependencies {
     implementation( project(":SDKit") )
     implementation( project(":NovaKit") )
+
+    implementation(libs.androidx.fragment.ktx)
 
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
 
