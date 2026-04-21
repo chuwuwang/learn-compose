@@ -21,6 +21,10 @@ class CustomizeViewActivity : BaseCMPActivity() {
                 navigateTo<TypewriterTextActivity>()
             }
 
+            RwButton(ModifierUtils.space_norm, text = "显示全文效果") {
+                navigateTo<TruncateTextActivity>()
+            }
+
         }
 
     }
