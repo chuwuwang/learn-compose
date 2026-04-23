@@ -29,9 +29,7 @@ class TypewriterTextActivity : BaseCMPActivity() {
                 // 打字机效果完成后的回调
                 Log.d("TypewriterTextActivity", "Screen: 打字机效果完成后的回调")
             }
-
         }
-
     }
 
 }

@@ -27,6 +27,7 @@
         <activity android:name=".view.CustomizeViewActivity" />
         <activity android:name=".view.TruncateTextActivity" />
         <activity android:name=".view.TypewriterTextActivity" />
+        <activity android:name=".view.AnimatedStripeProgressBarActivity" />
 
     </application>
 

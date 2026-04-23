@@ -1,4 +1,4 @@
-package com.ktx.compose.ui.widget
+package com.ktx.compose.view.component
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable

@@ -25,6 +25,10 @@ class CustomizeViewActivity : BaseCMPActivity() {
                 navigateTo<TruncateTextActivity>()
             }
 
+            RwButton(ModifierUtils.space_norm, text = "条纹进度条") {
+                navigateTo<AnimatedStripeProgressBarActivity>()
+            }
+
         }
 
     }
